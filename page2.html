@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f4f4f4;
+    }
+
+    h3 {
+      text-align: center;
+      color: #333;
+    }
+
+    form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    table {
+      width: 100%;
+    }
+
+    td {
+      padding: 10px;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    input[type="submit"] {
+      background-color: #3498db;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #2980b9;
+    }
+
+    p {
+      margin-top: 15px;
+      text-align: center;
+      color: #555;
+    }
+
+    a {
+      text-decoration: none;
+      color: #3498db;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h3>Cadastro</h3>
+
+  <form action="" method="post">
+    <table>
+      <tr>
+        <td>Usuário:</td>
+        <td><input type="text" name="user" placeholder="Digite aqui"></td>
+      </tr>
+      <tr>
+        <td>Senha:</td>
+        <td><input type="password" name="user_pass" placeholder="Digite aqui"></td>
+      </tr>
+      <tr>
+        <td>Email:</td>
+        <td><input type="email" name="mail" placeholder="Digite aqui"></td>
+      </tr>
+
+      <tr>
+        <td>Gênero:</td>
+        <td>
+          <input type="radio" name="gender"> Masculino
+          <input type="radio" name="gender"> Feminino
+        </td>
+      </tr>
+
+      <tr>
+        <td>Telefone:</td>
+        <td>
+          <select name="country_code">
+            <option value="+55">+55</option>
+          </select>
+          <input type="tel" name="mob_digits" placeholder="55******">
+        </td>
+      </tr>
+
+      <tr>
+        <td><input type="submit" name="enviar" value="Enviar"></td>
+        <td><p>Já possui uma conta? <a href="index.html">Entrar</a></p></td>
+      </tr>
+    </table>
+  </form>
+
+</body>
+</html>

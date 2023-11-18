@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat GPT</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    textarea {
+      width: 80%;
+      margin: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      resize: none;
+      color: white; /* Texto branco */
+    }
+
+    #result {
+      background-color: black; /* Fundo preto */
+      color: #fff;
+      font-weight: bold;
+    }
+
+    #inputQuestion {
+      background-color: black; /* Fundo preto */
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="content">
+    <textarea id="result" rows="10" disabled placeholder="Resposta" style="height: 70%;"></textarea>
+    <textarea id="inputQuestion" placeholder="Pergunte" style="height: 70%;" onkeypress="checkEnter(event)"></textarea>
+    <button onclick="getResponse()">Obter Resposta</button>
+    <button onclick="resetChat()">Reiniciar Chat</button>
+  </div>
+
+  <script>
+    function getResponse() {
+      var input = document.getElementById("inputQuestion").value.toLowerCase();
+      var output = document.getElementById("result");
+
+      switch (input) {
+        case "oi, tudo bem?":
+          output.value = "Olá! Como um programa de computador, eu não tenho sentimentos, mas estou aqui para ajudar. Como posso auxiliar você hoje?";
+          break;
+        case "me diga quem você é":
+          output.value = "Eu sou o ChatGPT, um modelo de linguagem desenvolvido pela OpenAI chamado GPT-3.5. Meu objetivo é fornecer informações e assistência com base nas perguntas e instruções que recebo. Eu não tenho uma personalidade, emoções ou consciência própria. Estou aqui para ajudar da melhor forma possível com informações e suporte em diversas áreas. Como posso ajudar você hoje?";
+          break;
+        case "qual a distância da terra para o sol?":
+          output.value = "A distância média da Terra ao Sol é de aproximadamente 149,6 milhões de quilômetros. Essa distância é conhecida como uma unidade astronômica (UA), e é usada como uma medida conveniente para descrever distâncias dentro do nosso sistema solar. Uma unidade astronômica é definida como a média da distância entre a Terra e o Sol.";
+          break;
+        default:
+          output.value = "Desculpe, não entendi a pergunta. Por favor, faça outra pergunta.";
+      }
+    }
+
+    function checkEnter(event) {
+      if (event.key === "Enter") {
+        getResponse();
+      }
+    }
+
+    function resetChat() {
+      document.getElementById("inputQuestion").value = "";
+      document.getElementById("result").value = "";
+    }
+  </script>
+</body>
+</html>
